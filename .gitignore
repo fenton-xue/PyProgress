@@ -3,3 +3,4 @@ venv/
 logs/
 report/
 config/db_conf.yml
+PyProgress.iml
