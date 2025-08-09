@@ -45,4 +45,19 @@ from locust import HttpUser, task
   - TPS：1秒内事务数，例如访问home，请求一次home.html, home.css, home.js，那TPS是1，QPS就是3
   - RT：响应时间，浏览器开发者工具中的Time
   - 并发用户数：1秒内并发用户数
-- Statistics 统计tab
+- Statistics 统计
+  - Type：请求类型
+  - Name：请求路径，像GET请求会带上参数，因此这里需要考虑聚合的问题
+  - \#Reqests：请求总数，从压测开始到停止之前
+  - \#Fails：失败总数，404 405 500等都会被统计进去的
+    - 若预期就是400, 那么需要调整
+  - Median(ms): RT的中位数
+  - 90%ile(ms): 满足90%的用户的RT
+  - 99%ile(ms): 满足99%的用户的RT
+  - Average(ms): RT的平均值
+  - Min(ms): RT的最小值
+  - Max(ms): RT的最大值
+  - Average size(bytes): 响应体大小
+  - Current RPS: 当前每秒请求数
+  - Current Failures/s: 当前每秒失败数
+- Charts 图表
