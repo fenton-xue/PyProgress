@@ -1,18 +1,26 @@
-import collections
+# import collections
+#
+# Card = collections.namedtuple('Card', ['rank', 'suit'])
+#
+# class FrenchDeck:
+#     ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+#     suits = '黑桃 方块 梅花 红心'.split()
+#
+#     def __init__(self):
+#         self._cards = [Card(rank, suit) for suit in self.suits
+#                                         for rank in self.ranks]
+#
+#     def __len__(self):
+#         return len(self._cards)
+from collections import namedtuple
 
-Card = collections.namedtuple('Card', ['rank', 'suit'])
+People1 = namedtuple('People', ['name', 'age', 'sex'])
+jack = People1('Jack', 18, 'Male')
+print(jack[1])
+print(jack.name)
+jack.age = '20'
+print(jack.age)
 
-class FrenchDeck:
-    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
-    suits = '黑桃 方块 梅花 红心'.split()
-
-    def __init__(self):
-        self._cards = [Card(rank, suit) for suit in self.suits
-                                        for rank in self.ranks]
-
-    def __len__(self):
-        return len(self._cards)
-
-if __name__ == '__main__':
-    print(FrenchDeck.ranks)
-    print(FrenchDeck.suits)
+# if __name__ == '__main__':
+    # print(FrenchDeck.ranks)
+    # print(FrenchDeck.suits)
